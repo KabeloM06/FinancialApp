@@ -1,0 +1,25 @@
+<h2 class="text-warning">Crypto Currencies</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Dummy Table
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        <tr *ngFor="let coin of coins">
+            <td>
+                <img [src]="coin.image" alt="{{coin.image}}">
+                <span>
+                    {{coin.name}}
+                </span>
+                <span>
+                    {{coin.symbol}}
+                </span>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
