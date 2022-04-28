@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { CoinsTableComponent } from './components/coins-table/coins-table.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoinsTableComponent
+    CoinsTableComponent,
+    FilterBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
