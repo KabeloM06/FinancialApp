@@ -1,25 +1,42 @@
-<h2 class="text-warning">Crypto Currencies</h2>
+<div class="container">
+    <h2 class="text-warning">Crypto Currencies</h2>
 
-<table>
+<table class="table table-dark">
     <thead>
         <tr>
-            <th>
-                Dummy Table
+            <th *ngFor="let title of titles">
+                {{title}}
             </th>
         </tr>
     </thead>
-    <tbody class="text-white">
-        <tr *ngFor="let coin of coins">
-            <td>
-                <img [src]="coin.image" alt="{{coin.image}}">
-                <span>
-                    {{coin.name}}
-                </span>
-                <span>
-                    {{coin.symbol}}
-                </span>
-                
-            </td>
-        </tr>
-    </tbody>
+    <div *ngIf="coins">
+        <tbody>
+            <tr *ngFor="let coin of coins; let i = index">
+                <td class="text-muted">
+                    {{i + 1}}
+                </td>
+                <td>
+                    <img [src]="coin.image" alt="{{coin.image}}">
+                    <span class="mx-2">
+                        {{coin.name}}
+                    </span>
+                    <span class="text-muted text-uppercase mx-2">
+                        {{coin.symbol}}
+                    </span>
+                    
+                </td>
+                <td>
+                    ${{coin.current_price.toLocaleString()}}
+                </td>
+                <td [ngClass]="coin.price_change> 0 ? 'text-success': 'text-danger'">
+                    {{coin.price_change.toLocaleString()}}
+                </td>
+                <td>
+                    {{coin.total_volume.toLocaleString()}}
+                </td>
+            </tr>
+        </tbody>
+    </div>
+    
 </table>
+</div>

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 
 interface Coin {
-  id: string
-  image: string
-  name: string
-  symbol: string
-  current_price: number
-  price_change: number
-  total_volume: number
+  id: string;
+  image: string;
+  name: string;
+  symbol: string;
+  current_price: number;
+  price_change: number;
+  total_volume: number;
 }
 
 @Component({
@@ -18,7 +18,14 @@ interface Coin {
 })
 export class CoinsTableComponent implements OnInit {
 
-  coins: Coin[] = [];
+  coins: Coin[] | undefined;
+  titles: string[] = [
+    '#',
+    'Coin',
+    'Price',
+    'Price Change',
+    '24hr Volume',
+  ]
 
   constructor(private http: HttpClient) { }
 
